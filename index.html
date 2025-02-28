@@ -73,6 +73,18 @@
       width: 100%;
     }
 
+    table {
+       width: 70%;
+       border-collapse: collapse;
+    }
+
+     th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+     }
+
+
   </style>
 </head>
 <body>
@@ -89,108 +101,1449 @@
     <p>Model architecture, Demos</p>
 
     <h2>Demo</h2>
-    <p> (1) Baseline</p>
-    <p> CRNN [1]</p>
-    <p> Conformer [2]</p>
-    <p> DeFT-AN [3]</p>
-      <div class="container">
-    <div class="item">
-      <img src="./Figure/clean.svg" alt="clean speech">
-      <audio controls>
-        <source src="./Demo/clean_fileid_10060.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
+<!--    <p> (1) Testing conditions</p>-->
+<!--    <p> T1: target speech + diffuse noise </p>-->
+<!--    <p> T2: target speech + distractors </p>-->
+<!--    <p> T3: target speech + diffuse noise + distractors</p>-->
 
-    <div class="item">
-      <img src="./Figure/noisy.svg" alt="noisy speech">
-      <audio controls>
-        <source src="./Demo/noisy_fileid_10060.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
+    <p> (1) First testing condition (T1): target speech + diffuse noise </p>
+        <table>
+        <tr>
+            <th rowspan="13" class="merged-cell">T1</th>
+            <th> DNN model </th>
+            <th> Methods </th>
+            <th> File 1 </th>
+            <th> File 2 </th>
+            <th> File 3 </th>
+            <th> File 4 </th>
+            <th> File 5 </th>
+        </tr>
 
-        <div class="item">
-      <img src="./Figure/crnn.svg" alt="crnn">
-          <audio controls>
-        <source src="./Demo/crnn.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
+        <tr>
+            <td> </td>
+            <td>Clean</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/clean/clean_fileid_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/clean/clean_fileid_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/clean/clean_fileid_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/clean/clean_fileid_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/clean/clean_fileid_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
 
-        <div class="item">
-      <img src="./Figure/dnnmvdr.svg" alt="dnnmvdr">
-      <audio controls>
-        <source src="./Demo/dnnmvdr.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-
-        <div class="item">
-      <img src="./Figure/deft_an.svg" alt="deftan">
-      <audio controls>
-        <source src="./Demo/deft_an.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-
-
-  </div>
-
-    <p> (2) Proposed</p>
-          <div class="container">
-    <div class="item">
-      <img src="./Figure/gt.svg" alt="ground truth">
-    </div>
-
-    <div class="item">
-      <img src="./Figure/spp.svg" alt="mc_spp estimate">
-    </div>
-
-        <div class="item">
-      <img src="./Figure/spp_crnn.svg" alt="spp_crnn">
-          <audio controls>
-        <source src="./Demo/spp_crnn.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
+        <tr>
+            <td> </td>
+            <td>Noisy</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/noisy/noisy_fileid_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/noisy/noisy_fileid_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/noisy/noisy_fileid_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/noisy/noisy_fileid_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/noisy/noisy_fileid_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
 
 
-        <div class="item">
-      <img src="./Figure/spp_conformer.svg" alt="spp conformer">
-      <audio controls>
-        <source src="./Demo/spp_conformer.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
+      <tr>
+            <td rowspan="5">FTJNF</td>
+            <td>FTJNF (LSTM) [1]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/FTJNF_lstm/Enhanced_ftjnf_lstm_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/FTJNF_lstm/Enhanced_ftjnf_lstm_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/FTJNF_lstm/Enhanced_ftjnf_lstm_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/FTJNF_lstm/Enhanced_ftjnf_lstm_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/FTJNF_lstm/Enhanced_ftjnf_lstm_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
 
-        <div class="item">
-      <img src="./Figure/spp_deft_an.svg" alt="deft-an">
-      <audio controls>
-        <source src="./Demo/spp_deft_an.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
+
+      <tr>
+<!--            <td> </td>-->
+            <td>FTJNF (BLSTM) [1]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/FTJNF_blstm/Enhanced_ftjnf_blstm_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/FTJNF_blstm/Enhanced_ftjnf_blstm_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/FTJNF_blstm/Enhanced_ftjnf_blstm_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/FTJNF_blstm/Enhanced_ftjnf_blstm_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/FTJNF_blstm/Enhanced_ftjnf_blstm_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+      <tr>
+<!--            <td> </td>-->
+            <td>mMVDR [3]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+      <tr>
+<!--            <td> </td>-->
+            <td>PF (LSTM) </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/PF_ftjnf/Enhanced0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/PF_ftjnf/Enhanced1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/PF_ftjnf/Enhanced2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/PF_ftjnf/Enhanced3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/PF_ftjnf/Enhanced4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+      <tr>
+<!--            <td> </td>-->
+            <td>Proposed (LSTM) </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Proposed_ftjnf/Enhanced_proposed_ftjnf_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Proposed_ftjnf/Enhanced_proposed_ftjnf_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Proposed_ftjnf/Enhanced_proposed_ftjnf_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Proposed_ftjnf/Enhanced_proposed_ftjnf_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Proposed_ftjnf/Enhanced_proposed_ftjnf_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+      <tr>
+            <td rowspan="5">DeFT-AN</td>
+            <td>DeFT-A (N=2) [2]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Deft_AN_2/Enhanced_deftan2_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Deft_AN_2/Enhanced_deftan2_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Deft_AN_2/Enhanced_deftan2_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Deft_AN_2/Enhanced_deftan2_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Deft_AN_2/Enhanced_deftan2_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+            <tr>
+            <td>DeFT-A (N=4) [2]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Deft_AN_4/Enhanced_deftan4_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Deft_AN_4/Enhanced_deftan4_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Deft_AN_4/Enhanced_deftan4_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Deft_AN_4/Enhanced_deftan4_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Deft_AN_4/Enhanced_deftan4_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+      <tr>
+            <td>mMVDR [3] (N=2)</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/mMVDR_deftan/Enhanced_mMVDR_deftan_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/mMVDR_deftan/Enhanced_mMVDR_deftan_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/mMVDR_deftan/Enhanced_mMVDR_deftan_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/mMVDR_deftan/Enhanced_mMVDR_deftan_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/mMVDR_deftan/Enhanced_mMVDR_deftan_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+      <tr>
+            <td>PF (N=2)</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/PF_deftan/Enhanced0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/PF_deftan/Enhanced1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/PF_deftan/Enhanced2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/PF_deftan/Enhanced3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/PF_deftan/Enhanced4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+      <tr>
+            <td>Proposed (N=2)</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Proposed_deftan/Enhanced_proposed_deftan_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Proposed_deftan/Enhanced_proposed_deftan_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Proposed_deftan/Enhanced_proposed_deftan_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Proposed_deftan/Enhanced_proposed_deftan_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/Proposed_deftan/Enhanced_proposed_deftan_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+    </table>
+
+<p> (2) Second testing condition (T2): target speech + distractors </p>
+        <table>
+        <tr>
+            <th rowspan="13" class="merged-cell">T2</th>
+            <th> DNN model </th>
+            <th> Methods </th>
+            <th> File 1 </th>
+            <th> File 2 </th>
+            <th> File 3 </th>
+            <th> File 4 </th>
+            <th> File 5 </th>
+        </tr>
+
+        <tr>
+            <td> </td>
+            <td>Clean</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/clean/clean_fileid_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/clean/clean_fileid_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/clean/clean_fileid_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/clean/clean_fileid_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/clean/clean_fileid_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+        <tr>
+            <td> </td>
+            <td>Noisy</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/noisy/noisy_fileid_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/noisy/noisy_fileid_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/noisy/noisy_fileid_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/noisy/noisy_fileid_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/noisy/noisy_fileid_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+      <tr>
+            <td rowspan="5">FTJNF</td>
+            <td>FTJNF (LSTM) [1]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/FTJNF_lstm/Enhanced_ftjnf_lstm_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/FTJNF_lstm/Enhanced_ftjnf_lstm_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/FTJNF_lstm/Enhanced_ftjnf_lstm_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/FTJNF_lstm/Enhanced_ftjnf_lstm_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/FTJNF_lstm/Enhanced_ftjnf_lstm_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+      <tr>
+<!--            <td> </td>-->
+            <td>FTJNF (BLSTM) [1]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/FTJNF_blstm/Enhanced_ftjnf_blstm_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/FTJNF_blstm/Enhanced_ftjnf_blstm_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/FTJNF_blstm/Enhanced_ftjnf_blstm_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/FTJNF_blstm/Enhanced_ftjnf_blstm_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/FTJNF_blstm/Enhanced_ftjnf_blstm_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+      <tr>
+<!--            <td> </td>-->
+            <td>mMVDR [3]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+      <tr>
+<!--            <td> </td>-->
+            <td>PF (LSTM) </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/PF_ftjnf/Enhanced0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/PF_ftjnf/Enhanced1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/PF_ftjnf/Enhanced2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/PF_ftjnf/Enhanced3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/PF_ftjnf/Enhanced4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+      <tr>
+<!--            <td> </td>-->
+            <td>Proposed (LSTM) </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Proposed_ftjnf/Enhanced_proposed_ftjnf_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Proposed_ftjnf/Enhanced_proposed_ftjnf_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Proposed_ftjnf/Enhanced_proposed_ftjnf_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Proposed_ftjnf/Enhanced_proposed_ftjnf_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Proposed_ftjnf/Enhanced_proposed_ftjnf_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+      <tr>
+            <td rowspan="5">DeFT-AN</td>
+            <td>DeFT-A (N=2) [2]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Deft_AN_2/Enhanced_deftan2_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Deft_AN_2/Enhanced_deftan2_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Deft_AN_2/Enhanced_deftan2_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Deft_AN_2/Enhanced_deftan2_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Deft_AN_2/Enhanced_deftan2_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+            <tr>
+            <td>DeFT-A (N=4) [2]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Deft_AN_4/Enhanced_deftan4_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Deft_AN_4/Enhanced_deftan4_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Deft_AN_4/Enhanced_deftan4_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Deft_AN_4/Enhanced_deftan4_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Deft_AN_4/Enhanced_deftan4_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+      <tr>
+            <td>mMVDR [3] (N=2)</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/mMVDR_deftan/Enhanced_mMVDR_deftan_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/mMVDR_deftan/Enhanced_mMVDR_deftan_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/mMVDR_deftan/Enhanced_mMVDR_deftan_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/mMVDR_deftan/Enhanced_mMVDR_deftan_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/mMVDR_deftan/Enhanced_mMVDR_deftan_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+      <tr>
+            <td>PF (N=2)</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/PF_deftan/Enhanced0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/PF_deftan/Enhanced1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/PF_deftan/Enhanced2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/PF_deftan/Enhanced3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/PF_deftan/Enhanced4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+      <tr>
+            <td>Proposed (N=2)</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Proposed_deftan/Enhanced_proposed_deftan_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Proposed_deftan/Enhanced_proposed_deftan_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Proposed_deftan/Enhanced_proposed_deftan_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Proposed_deftan/Enhanced_proposed_deftan_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T2/Proposed_deftan/Enhanced_proposed_deftan_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+    </table>
+
+
+
+      <p> (3) Third testing condition (T3): target speech + diffuse noise + distractors </p>
+        <table>
+        <tr>
+            <th rowspan="13" class="merged-cell">T3</th>
+            <th> DNN model </th>
+            <th> Methods </th>
+            <th> File 1 </th>
+            <th> File 2 </th>
+            <th> File 3 </th>
+            <th> File 4 </th>
+            <th> File 5 </th>
+        </tr>
+
+        <tr>
+            <td> </td>
+            <td>Clean</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/clean/clean_fileid_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/clean/clean_fileid_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/clean/clean_fileid_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/clean/clean_fileid_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/clean/clean_fileid_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+        <tr>
+            <td> </td>
+            <td>Noisy</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/noisy/noisy_fileid_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/noisy/noisy_fileid_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/noisy/noisy_fileid_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/noisy/noisy_fileid_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/noisy/noisy_fileid_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+      <tr>
+            <td rowspan="5">FTJNF</td>
+            <td>FTJNF (LSTM) [1]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/FTJNF_lstm/Enhanced_ftjnf_lstm_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/FTJNF_lstm/Enhanced_ftjnf_lstm_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/FTJNF_lstm/Enhanced_ftjnf_lstm_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/FTJNF_lstm/Enhanced_ftjnf_lstm_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T1/FTJNF_lstm/Enhanced_ftjnf_lstm_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+      <tr>
+<!--            <td> </td>-->
+            <td>FTJNF (BLSTM) [1]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/FTJNF_blstm/Enhanced_ftjnf_blstm_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/FTJNF_blstm/Enhanced_ftjnf_blstm_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/FTJNF_blstm/Enhanced_ftjnf_blstm_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/FTJNF_blstm/Enhanced_ftjnf_blstm_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/FTJNF_blstm/Enhanced_ftjnf_blstm_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+      <tr>
+<!--            <td> </td>-->
+            <td>mMVDR [3]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/mMVDR_ftjnf/Enhanced_mMVDR_ftjnf_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+      <tr>
+<!--            <td> </td>-->
+            <td>PF (LSTM) </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/PF_ftjnf/Enhanced0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/PF_ftjnf/Enhanced1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/PF_ftjnf/Enhanced2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/PF_ftjnf/Enhanced3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/PF_ftjnf/Enhanced4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+      <tr>
+<!--            <td> </td>-->
+            <td>Proposed (LSTM) </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Proposed_ftjnf/Enhanced_proposed_ftjnf_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Proposed_ftjnf/Enhanced_proposed_ftjnf_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Proposed_ftjnf/Enhanced_proposed_ftjnf_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Proposed_ftjnf/Enhanced_proposed_ftjnf_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Proposed_ftjnf/Enhanced_proposed_ftjnf_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+      <tr>
+            <td rowspan="5">DeFT-AN</td>
+            <td>DeFT-A (N=2) [2]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Deft_AN_2/Enhanced_deftan2_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Deft_AN_2/Enhanced_deftan2_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Deft_AN_2/Enhanced_deftan2_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Deft_AN_2/Enhanced_deftan2_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Deft_AN_2/Enhanced_deftan2_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+
+            <tr>
+            <td>DeFT-A (N=4) [2]</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Deft_AN_4/Enhanced_deftan4_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Deft_AN_4/Enhanced_deftan4_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Deft_AN_4/Enhanced_deftan4_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Deft_AN_4/Enhanced_deftan4_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Deft_AN_4/Enhanced_deftan4_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+        </tr>
+
+      <tr>
+            <td>mMVDR [3] (N=2)</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/mMVDR_deftan/Enhanced_mMVDR_deftan_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/mMVDR_deftan/Enhanced_mMVDR_deftan_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/mMVDR_deftan/Enhanced_mMVDR_deftan_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/mMVDR_deftan/Enhanced_mMVDR_deftan_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/mMVDR_deftan/Enhanced_mMVDR_deftan_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+      <tr>
+            <td>PF (N=2)</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/PF_deftan/Enhanced0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/PF_deftan/Enhanced1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/PF_deftan/Enhanced2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/PF_deftan/Enhanced3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+          <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/PF_deftan/Enhanced4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+      <tr>
+            <td>Proposed (N=2)</td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Proposed_deftan/Enhanced_proposed_deftan_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Proposed_deftan/Enhanced_proposed_deftan_1.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Proposed_deftan/Enhanced_proposed_deftan_2.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Proposed_deftan/Enhanced_proposed_deftan_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td>
+                 <audio controls>-->
+                <source src="./Demo/T3/Proposed_deftan/Enhanced_proposed_deftan_4.wav" type="audio/wav">
+                Your browser does not support the audio element.
+                </audio>
+            </td>
+
+        </tr>
+
+
+    </table>
+
+
+
+
+<!--      <div class="container">-->
+<!--    <div class="item">-->
+<!--      <img src="./Figure/clean.svg" alt="clean speech">-->
+<!--      <audio controls>-->
+<!--        <source src="./Demo/clean_fileid_10060.wav" type="audio/wav">-->
+<!--        Your browser does not support the audio element.-->
+<!--      </audio>-->
+<!--    </div>-->
+
+<!--    <div class="item">-->
+<!--      <img src="./Figure/noisy.svg" alt="noisy speech">-->
+<!--      <audio controls>-->
+<!--        <source src="./Demo/noisy_fileid_10060.wav" type="audio/wav">-->
+<!--        Your browser does not support the audio element.-->
+<!--      </audio>-->
+<!--    </div>-->
 
 <!--        <div class="item">-->
-<!--      <img src="./Figures/Multi_Channel/nsnet.svg" alt="nsnet">-->
+<!--      <img src="./Figure/crnn.svg" alt="crnn">-->
+<!--          <audio controls>-->
+<!--        <source src="./Demo/crnn.wav" type="audio/wav">-->
+<!--        Your browser does not support the audio element.-->
+<!--      </audio>-->
+<!--    </div>-->
+
+<!--        <div class="item">-->
+<!--      <img src="./Figure/dnnmvdr.svg" alt="dnnmvdr">-->
 <!--      <audio controls>-->
-<!--        <source src="./Demos/Multi_Channel/nsnet.wav" type="audio/wav">-->
+<!--        <source src="./Demo/dnnmvdr.wav" type="audio/wav">-->
+<!--        Your browser does not support the audio element.-->
+<!--      </audio>-->
+<!--    </div>-->
+
+<!--        <div class="item">-->
+<!--      <img src="./Figure/deft_an.svg" alt="deftan">-->
+<!--      <audio controls>-->
+<!--        <source src="./Demo/deft_an.wav" type="audio/wav">-->
 <!--        Your browser does not support the audio element.-->
 <!--      </audio>-->
 <!--    </div>-->
 
 
-  </div>
+<!--  </div>-->
+
+<!--    <p> (2) Proposed</p>-->
+<!--          <div class="container">-->
+<!--    <div class="item">-->
+<!--      <img src="./Figure/gt.svg" alt="ground truth">-->
+<!--    </div>-->
+
+<!--    <div class="item">-->
+<!--      <img src="./Figure/spp.svg" alt="mc_spp estimate">-->
+<!--    </div>-->
+
+<!--        <div class="item">-->
+<!--      <img src="./Figure/spp_crnn.svg" alt="spp_crnn">-->
+<!--          <audio controls>-->
+<!--        <source src="./Demo/spp_crnn.wav" type="audio/wav">-->
+<!--        Your browser does not support the audio element.-->
+<!--      </audio>-->
+<!--    </div>-->
+
+
+<!--        <div class="item">-->
+<!--      <img src="./Figure/spp_conformer.svg" alt="spp conformer">-->
+<!--      <audio controls>-->
+<!--        <source src="./Demo/spp_conformer.wav" type="audio/wav">-->
+<!--        Your browser does not support the audio element.-->
+<!--      </audio>-->
+<!--    </div>-->
+
+<!--        <div class="item">-->
+<!--      <img src="./Figure/spp_deft_an.svg" alt="deft-an">-->
+<!--      <audio controls>-->
+<!--        <source src="./Demo/spp_deft_an.wav" type="audio/wav">-->
+<!--        Your browser does not support the audio element.-->
+<!--      </audio>-->
+<!--    </div>-->
+
+<!--&lt;!&ndash;        <div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;      <img src="./Figures/Multi_Channel/nsnet.svg" alt="nsnet">&ndash;&gt;-->
+<!--&lt;!&ndash;      <audio controls>&ndash;&gt;-->
+<!--&lt;!&ndash;        <source src="./Demos/Multi_Channel/nsnet.wav" type="audio/wav">&ndash;&gt;-->
+<!--&lt;!&ndash;        Your browser does not support the audio element.&ndash;&gt;-->
+<!--&lt;!&ndash;      </audio>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+
+
+<!--  </div>-->
 
         <h2>Reference</h2>
-        <p>[1] S. Chakrabarty and E. A. Habets, “Time–frequency masking based online multi-channel speech enhancement
-          with convolutional recurrent neural networks,” IEEE Journal of Selected Topics in Signal Processing, vol. 13,
-          no. 4, pp. 787–799, 2019.
-        <p>[2] M. Kim, S. Cheong, and J. W. Shin, “DNN-based Parameter Estimation for MVDR Beamforming and
-        Post-filtering,” in. INTERSPEECH 2023, 2023, pp. 3879–3883
-        <p>[3] D. Lee and J.-W. Choi, “DeFT-AN: Dense frequency-time attentive network for multichannel speech
+        <p>[1] K. Tesch and T. Gerkmann, “Insights into deep non-linear filters for improved multi-channel speech enhancement,” IEEE/ACM Transactions
+          on Audio, Speech, and Language Processing, vol. 31, pp. 563–575, 2022.
+        <p>[2] D. Lee and J.-W. Choi, “DeFT-AN: Dense frequency-time attentive network for multichannel speech
         enhancement,” IEEE Signal Processing Letters, vol. 30, pp. 155–159, 2023.
+        <p>[3] S. Tao, P. Mowlaee, J. R. Jensen, and M. G. Christensen, “Learning- based multi-channel speech presence
+    probability estimation using a low-parameter model and integration with MVDR beamforming for multi-channel speech enhancement,”
+    in 2024 18th International Workshop on Acoustic Signal Enhancement (IWAENC). IEEE, 2024, pp. 100–104.
 
   </section>
 
